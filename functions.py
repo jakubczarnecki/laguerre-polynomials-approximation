@@ -1,7 +1,9 @@
 from numpy import sin, cos, e
 
+def polynomial(x):
+    # 3x^4 - 2x^3 + 4x^2 + x + 1
+    tab = [3, -2, 4, 1, 1]
 
-def polynomial(x, tab):
     numOfFactors = len(tab)
     result = 0
     for i in range(numOfFactors - 1):
@@ -10,7 +12,6 @@ def polynomial(x, tab):
         result += tab[i] * x ** (numOfFactors - 1 - i)
 
     return result
-
 
 f1 = lambda x: abs(2 * x - 3)
 
@@ -22,6 +23,5 @@ f4 = lambda x: x * x
 
 f5 = lambda x: cos(sin(x))
 
-f6 = lambda x, tab: polynomial(x, tab)
+f6 = lambda x, tab: polynomial(x)  # 3x^4 - 2x^3 + 4x^2 + x + 1
 
-w = lambda x: e ** (- (x * x))
