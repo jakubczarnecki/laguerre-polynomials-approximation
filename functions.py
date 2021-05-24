@@ -16,12 +16,10 @@ f1 = lambda x: abs(2 * x - 3)
 
 f2 = lambda x: sin(x + 2)
 
-f3 = lambda x: cos(2*x)
+f3 = lambda x: cos(2 * x)
 
 f4 = lambda x: x * x
 
 f5 = lambda x: cos(sin(x))
 
-f6 = lambda x, tab: polynomial(x, tab)
-
-w = lambda x: e ** (- (x * x))
+f6 = lambda x: 3 * x ** 4 - 2 * x ** 3 + 4 * x ** 2 + x + 1  # 3x^4 - 2x^3 + 4x^2 + x + 1
