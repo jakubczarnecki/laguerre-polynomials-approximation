@@ -25,7 +25,7 @@ if __name__ == '__main__':
     }
 
     func = input("\n 1. f(x) = |2x - 3|"
-                 "\n 2. f(x) = sin(x)"
+                 "\n 2. f(x) = x + 2"
                  "\n 3. f(x) = cos(2x)"
                  "\n 4. f(x) = x^2"
                  "\n 5. f(x) = cos(sin(x))"
@@ -47,7 +47,11 @@ if __name__ == '__main__':
     xs = np.linspace(left, right, 1000, endpoint=True)
     ys = []
     for x in xs:
-        ys.append(horner(x, factors))
+        yi = 0.0
+        for i in range(level + 1):
+            yi += factors[i] * laguerre(i, x);
+        ys.append(yi)
+
 
     xs2 = np.linspace(left, right, 1000, endpoint=True)
     ys2 = []
