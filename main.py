@@ -9,8 +9,9 @@ from functions import *
 from horner import horner
 
 if __name__ == '__main__':
-    a = np.zeros(5)
+    a = np.array([2,2,2])
     print(a)
+    print(a/2)
     print("\n\nMetody numeryczne - zadanie 5. Aproksymacja")
     print("Wariant 3 - wielomiany Laguerre'a\n")
 
@@ -36,10 +37,17 @@ if __name__ == '__main__':
     right = np.double(input("podaj prawą stronę przedziału aproksymacji:"))
     nodes = int(input("podaj liczbę węzłów całkowania metodą Gaussa-Hermite'a:"))
 
+    factors = np.zeros(level + 1)
+    for i in range(level + 1):
+        factors[i] = laguerre_factors(funcs.get(func), nodes, i)
+        print(i)
+
+    print(factors)
+
     xs = np.linspace(left, right, 1000, endpoint=True)
     ys = []
     for x in xs:
-        ys.append(polynomial(x, laguerre_factors(funcs.get(func), nodes, level)))
+        ys.append(horner(x, factors))
 
     xs2 = np.linspace(left, right, 1000, endpoint=True)
     ys2 = []
