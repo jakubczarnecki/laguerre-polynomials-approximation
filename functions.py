@@ -22,4 +22,4 @@ f4 = lambda x: x * x
 
 f5 = lambda x: cos(sin(x))
 
-f6 = lambda x: 3 * x ** 4 - 2 * x ** 3 + 4 * x ** 2 + x + 1  # 3x^4 - 2x^3 + 4x^2 + x + 1
+f6 = lambda x: 2 * x ** 3 - 4 * x ** 2 + 8 * x - 3  # 3x^4 - 2x^3 + 4x^2 + x + 1
