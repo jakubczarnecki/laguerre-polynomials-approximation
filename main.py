@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 
 from laguerre import *
 import functions as f
-from utils import *
 
 if __name__ == '__main__':
     a = np.array([2,2,2])
@@ -25,7 +24,7 @@ if __name__ == '__main__':
                  "\n 3. f(x) = cos(2x)"
                  "\n 4. f(x) = x^2"
                  "\n 5. f(x) = cos(sin(x))"
-                 "\n 6. f(x) = 2x^3 - 4x^2 + 8x - 3\n"
+                 "\n 6. f(x) = 1/2x^3 + 3x^2 + 3x - 2\n"
                  "\n Wybierz funkcję: ")
 
     level = int(input("podaj stopien wielomianu aproksymujacego:"))
@@ -36,9 +35,6 @@ if __name__ == '__main__':
     factors = np.zeros(level + 1)
     for i in range(level + 1):
         factors[i] = laguerre_factors(funcs.get(func), nodes, i)
-        print(i)
-
-    print(factors)
 
     xs = np.linspace(left, right, 1000, endpoint=True)
     ys = []
@@ -61,9 +57,10 @@ if __name__ == '__main__':
     plt.grid(b=True, axis='both')
     plt.show()
 
+    meanerror = f.mean_error(ys, ys2)
+    mindev = f.min_deviation(ys, ys2)
+    maxdev = f.max_deviation(ys, ys2)
 
-
-
-
-
-
+    print('Sredni blad aproksymacji: %.16f' % meanerror)
+    print('Minimalne odchylenie aproksymacji: %.16f' % mindev)
+    print('Maksymalne odchylenie aproksymacji: %.16f' % maxdev)

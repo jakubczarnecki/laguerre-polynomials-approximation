@@ -35,8 +35,8 @@ def laguerre_factors(f, quadlevel, polylevel):
     for j in range(0, quadlevel):
         result += f(roots[quadlevel - 2][j]) * coefficients[quadlevel - 2][j] * laguerre(polylevel, roots[quadlevel - 2][j])
 
-    print(result)
     return result / (math.factorial(polylevel) ** 2)
+
 
 
 
